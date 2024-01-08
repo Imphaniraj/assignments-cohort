@@ -5,6 +5,22 @@
  */
 
 function sleep(milliseconds) {
+    return new Promise((resolve)=>{
+        const start = Date.now()
+        const end = start+ milliseconds
+
+        while(Date.now() < end){
+
+        }
+        resolve(`Thread halted for ${milliseconds} milliseconds`)
+
+    })
 }
+
+sleep(5000).then((res)=>{
+    console.log(res);
+}).catch((error) => {
+    console.error(error);
+})
 
 module.exports = sleep;
